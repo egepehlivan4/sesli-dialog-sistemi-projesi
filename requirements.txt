@@ -1,0 +1,6 @@
+faster-whisper
+silero-vad
+piper-tts>=1.4
+sounddevice
+numpy
+requests

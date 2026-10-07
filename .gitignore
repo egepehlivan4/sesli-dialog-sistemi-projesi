@@ -1,0 +1,20 @@
+# Ortam / sanal ortam
+venv/
+.venv/
+env/
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Modeller (ASR/TTS ağırlıkları, büyük dosyalar)
+models/
+
+# Ses kayıtları
+*.wav
+
+# IDE
+.idea/

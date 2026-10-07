@@ -1,0 +1,16 @@
+VAD yönlendirmeli test sonuçları
+threshold=0.5  min_speech_ms=250  min_silence_ms=500
+
+Adım 0: Hiç konuşmayın, tamamen sessiz kalın.
+Adım 1: Normal bir cümle söyleyin: "Merhaba, bugün hava çok güzel."
+Adım 2: Ortasında yarım saniye durarak söyleyin: "Bugün... hava güzel."
+Adım 3: Sadece "hı hı" deyin, başka bir şey söylemeyin.
+Adım 4: Hiç konuşmayın, masaya parmağınızla birkaç kez vurun.
+
+Adım SPEECH_START  SPEECH_END  Ort.P     Maks.P    Beklenen                                     
+------------------------------------------------------------------------------------------------
+0    0             0           0.015     0.122     konuşma yok (arka plan gürültüsü ölçümü)     
+1    1             1           0.336     1.000     1 konuşma                                    
+2    1             1           0.260     1.000     1 konuşma                                    
+3    1             1           0.114     1.000     ? (belirsiz, kısa/alçak ünlem eşiği aşmayabilir)
+4    0             0           0.009     0.138     0 konuşma                                    
