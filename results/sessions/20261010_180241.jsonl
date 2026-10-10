@@ -1,0 +1,31 @@
+{"elapsed_s": 3.02, "event": "session_start", "strategy": "vad_only"}
+{"elapsed_s": 5.827, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 7.343, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 7.343, "event": "speech_end"}
+{"elapsed_s": 8.953, "event": "asr_final", "text": "Cumartesi açık mısınız?", "no_speech_prob": 0.013345414772629738, "avg_logprob": -0.3073412418365479}
+{"elapsed_s": 8.953, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 8.953, "event": "llm_start"}
+{"elapsed_s": 10.848, "event": "llm_sentence", "text": "Evet, cumartesi saat 10:00-14:00 arasında randevu alabilirsiniz."}
+{"elapsed_s": 11.215, "event": "response_latency", "ms": 3871.05570800486}
+{"elapsed_s": 11.215, "event": "state_change", "frm": "THINKING", "to": "SPEAK"}
+{"elapsed_s": 11.215, "event": "tts_start", "text": "Evet, cumartesi saat 10:00-14:00 arasında randevu alabilirsiniz."}
+{"elapsed_s": 16.914, "event": "tts_end", "text": "Evet, cumartesi saat 10:00-14:00 arasında randevu alabilirsiniz."}
+{"elapsed_s": 16.915, "event": "llm_sentence", "text": "Tercih ettiğiniz saat nedir?"}
+{"elapsed_s": 17.015, "event": "tts_start", "text": "Tercih ettiğiniz saat nedir?"}
+{"elapsed_s": 19.094, "event": "tts_end", "text": "Tercih ettiğiniz saat nedir?"}
+{"elapsed_s": 19.094, "event": "turn_end", "interrupted": false, "played": 2}
+{"elapsed_s": 19.094, "event": "state_change", "frm": "SPEAK", "to": "LISTEN"}
+{"elapsed_s": 20.165, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 22.327, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 22.327, "event": "speech_end"}
+{"elapsed_s": 24.033, "event": "asr_final", "text": "Randevu almak istiyorum. Nasıl yapabilirim?", "no_speech_prob": 0.04879890754818916, "avg_logprob": -0.2737060030301412}
+{"elapsed_s": 24.033, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 24.033, "event": "llm_start"}
+{"elapsed_s": 24.041, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 24.041, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 24.041, "event": "state_change", "frm": "THINKING", "to": "LISTEN"}
+{"elapsed_s": 24.055, "event": "interrupt", "cutoff_ms": 13.770167002803646}
+{"elapsed_s": 24.415, "event": "turn_end", "interrupted": false, "played": 0}
+{"elapsed_s": 24.642, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 24.642, "event": "speech_end"}
+{"elapsed_s": 26.214, "event": "session_end", "turns": 2, "interrupts": 1}

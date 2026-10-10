@@ -1,0 +1,50 @@
+{"elapsed_s": 8.044, "event": "session_start", "strategy": "vad_only"}
+{"elapsed_s": 10.206, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 11.831, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 11.831, "event": "speech_end"}
+{"elapsed_s": 13.508, "event": "asr_final", "text": "Cumartesi açık mısınız?", "no_speech_prob": 0.05549515411257744, "avg_logprob": -0.25686330199241636}
+{"elapsed_s": 13.509, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 13.509, "event": "llm_start"}
+{"elapsed_s": 15.684, "event": "llm_sentence", "text": "Evet, cumartesi günleri 10:00-14:00 saatleri arasında randevu alabilirsiniz."}
+{"elapsed_s": 16.12, "event": "response_latency", "ms": 4288.202583004022}
+{"elapsed_s": 16.12, "event": "state_change", "frm": "THINKING", "to": "SPEAK"}
+{"elapsed_s": 16.12, "event": "tts_start", "text": "Evet, cumartesi günleri 10:00-14:00 saatleri arasında randevu alabilirsiniz."}
+{"elapsed_s": 16.555, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 16.555, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 16.555, "event": "state_change", "frm": "SPEAK", "to": "LISTEN"}
+{"elapsed_s": 16.555, "event": "tts_end", "text": "Evet, cumartesi günleri 10:00-14:00 saatleri arasında randevu alabilirsiniz."}
+{"elapsed_s": 16.555, "event": "turn_end", "interrupted": true, "played": 1}
+{"elapsed_s": 16.56, "event": "interrupt", "cutoff_ms": 4.829333003726788}
+{"elapsed_s": 17.28, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 17.28, "event": "speech_end"}
+{"elapsed_s": 18.766, "event": "asr_final", "text": "Evet.", "no_speech_prob": 0.0799969956278801, "avg_logprob": -0.515202522277832}
+{"elapsed_s": 18.766, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 18.766, "event": "llm_start"}
+{"elapsed_s": 19.243, "event": "llm_sentence", "text": "Harika!"}
+{"elapsed_s": 19.3, "event": "response_latency", "ms": 2019.3932499969378}
+{"elapsed_s": 19.3, "event": "state_change", "frm": "THINKING", "to": "SPEAK"}
+{"elapsed_s": 19.3, "event": "tts_start", "text": "Harika!"}
+{"elapsed_s": 19.74, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 19.74, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 19.741, "event": "state_change", "frm": "SPEAK", "to": "LISTEN"}
+{"elapsed_s": 19.741, "event": "tts_end", "text": "Harika!"}
+{"elapsed_s": 19.741, "event": "turn_end", "interrupted": true, "played": 1}
+{"elapsed_s": 19.761, "event": "interrupt", "cutoff_ms": 19.201666000299156}
+{"elapsed_s": 20.494, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 20.494, "event": "speech_end"}
+{"elapsed_s": 22.013, "event": "asr_final", "text": "Aika.", "no_speech_prob": 0.1302253156900406, "avg_logprob": -0.8942985534667969}
+{"elapsed_s": 22.013, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 22.013, "event": "llm_start"}
+{"elapsed_s": 23.048, "event": "llm_sentence", "text": "Lütfen ad soyadınızı ve tercih ettiğiniz günü, saat aralığını belirtin."}
+{"elapsed_s": 23.24, "event": "response_latency", "ms": 2744.9818340028287}
+{"elapsed_s": 23.24, "event": "state_change", "frm": "THINKING", "to": "SPEAK"}
+{"elapsed_s": 23.24, "event": "tts_start", "text": "Lütfen ad soyadınızı ve tercih ettiğiniz günü, saat aralığını belirtin."}
+{"elapsed_s": 23.68, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 23.681, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 23.681, "event": "state_change", "frm": "SPEAK", "to": "LISTEN"}
+{"elapsed_s": 23.681, "event": "tts_end", "text": "Lütfen ad soyadınızı ve tercih ettiğiniz günü, saat aralığını belirtin."}
+{"elapsed_s": 23.681, "event": "turn_end", "interrupted": true, "played": 1}
+{"elapsed_s": 23.701, "event": "interrupt", "cutoff_ms": 18.973874997755047}
+{"elapsed_s": 24.479, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 24.479, "event": "speech_end"}
+{"elapsed_s": 26.216, "event": "session_end", "turns": 3, "interrupts": 3}

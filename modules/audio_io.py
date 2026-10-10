@@ -48,9 +48,18 @@ class MicStream:
         self._queue = queue.Queue()
         self._stream = None
 
+        # input_overflow: PortAudio'nun bizim tüketemediğimiz için attığı
+        # örnekler -- SessionRecorder'ın sol kanalının neden kaymış
+        # olabileceğini teşhis etmek için sayılır (bkz. Controller.run()).
+        self.overflow_count = 0
+        self._overflow_lock = threading.Lock()
+
     def _callback(self, indata, frames, time_info, status):
         if status:
             print(f"MicStream durumu: {status}", file=sys.stderr)
+            if getattr(status, "input_overflow", False):
+                with self._overflow_lock:
+                    self.overflow_count += 1
         self._queue.put(indata.copy())
 
     def start(self) -> None:

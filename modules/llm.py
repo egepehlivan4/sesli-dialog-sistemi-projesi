@@ -2,7 +2,8 @@
 LLM modülü: Ollama /api/chat endpoint'ini streaming modda kullanır.
 
 URL ve model config.py'den okunur (varsayılan: http://localhost:11434,
-qwen2.5:3b). Sistem promptu Türkçe ve cevapları kısa tutmaya zorlar
+qwen2.5:3b). Sistem promptu prompts/system_tr.txt'ten okunur (dosya yoksa
+_DEFAULT_SYSTEM_PROMPT'a döner); Türkçe ve cevapları kısa tutmaya zorlar
 (sesli asistanda uzun cevap = uzun gecikme).
 
 Tek başına çalıştırma (entegrasyon testi):
@@ -21,10 +22,23 @@ import requests
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import SETTINGS
 
-SYSTEM_PROMPT = (
+_DEFAULT_SYSTEM_PROMPT = (
     "Yalnızca tek kısa cümleyle Türkçe cevap ver. Emin olmadığın bilgiyi "
     "uydurma, bilmiyorsan söyle."
 )
+
+SYSTEM_PROMPT_PATH = SETTINGS.base_dir / "prompts" / "system_tr.txt"
+
+
+def _load_system_prompt() -> str:
+    try:
+        text = SYSTEM_PROMPT_PATH.read_text(encoding="utf-8").strip()
+    except OSError:
+        return _DEFAULT_SYSTEM_PROMPT
+    return text if text else _DEFAULT_SYSTEM_PROMPT
+
+
+SYSTEM_PROMPT = _load_system_prompt()
 
 # Düşük sıcaklık = daha az uydurma (hallucination), daha tutarlı cevap.
 DEFAULT_TEMPERATURE = 0.3
