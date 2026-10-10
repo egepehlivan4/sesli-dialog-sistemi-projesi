@@ -1,0 +1,37 @@
+Ses örnekleri TTS ile üretiliyor...
+  [~0.5 s] "Evet."  (gerçek süre: 0.60 s)
+  [~1.5 s] "Saat üçte görüşürüz."  (gerçek süre: 1.74 s)
+  [~4 s] "Yarın saat üçte randevunuz var, lütfen zamanında gelin."  (gerçek süre: 4.14 s)
+
+=== tiny ===
+  [~0.5 s] (ses 0.60 s) ortalama 179 ms (5x)
+    Metin: "Evet."
+  [~1.5 s] (ses 1.74 s) ortalama 194 ms (5x)
+    Metin: "Saat 3 de görüşürüz."
+  [~4 s] (ses 4.14 s) ortalama 220 ms (5x)
+    Metin: "Yarın saat üç tere an devunuz vak, lütfen zamanında gelin."
+
+=== base ===
+  [~0.5 s] (ses 0.60 s) ortalama 386 ms (5x)
+    Metin: "Evet."
+  [~1.5 s] (ses 1.74 s) ortalama 412 ms (5x)
+    Metin: "Saat 3 de görüşürüz."
+  [~4 s] (ses 4.14 s) ortalama 449 ms (5x)
+    Metin: "Yarın saat üçlerinde vunuz vak hütlen zamanında gelin."
+
+=== small ===
+  [~0.5 s] (ses 0.60 s) ortalama 1399 ms (5x)
+    Metin: "Evet."
+  [~1.5 s] (ses 1.74 s) ortalama 1468 ms (5x)
+    Metin: "Saat 3'te görüşürüz."
+  [~4 s] (ses 4.14 s) ortalama 1582 ms (5x)
+    Metin: "Yarın saat 3'te rağmen de bunu var. Lütfen zamanında gelin."
+
+==========================================================================
+ÖZET (ortalama transcribe süresi, ms)
+==========================================================================
+Model     ~0.5 s          ~1.5 s          ~4 s            0.5s/4s oranı   
+--------------------------------------------------------------------------
+tiny      179 ms          194 ms          220 ms          0.81            
+base      386 ms          412 ms          449 ms          0.86            
+small     1399 ms         1468 ms         1582 ms         0.88            

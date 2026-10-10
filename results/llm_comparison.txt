@@ -1,0 +1,179 @@
+Karşılaştırılacak modeller: qwen2.5:3b, qwen2.5:7b, gemma3:4b
+
+=== qwen2.5:3b ===
+Isınma isteği gönderiliyor...
+Isınma tamamlandı (2002 ms)
+
+Soru: Yarın saat kaçta açıksınız?
+  Cevap           : Bilmiyorum, yarın saat ne zaman açıksanız bilmiyorum.
+  TTFT            : 119 ms
+  İlk cümle süresi: 811 ms
+  Token/saniye    : 30.3
+
+Soru: Randevumu iptal etmek istiyorum.
+  Cevap           : Bilmiyorum, randevuları iptal etme yetkisi yok.
+  TTFT            : 152 ms
+  İlk cümle süresi: 760 ms
+  Token/saniye    : 29.6
+
+Soru: Bu hafta sonu hava nasıl olacak?
+  Cevap           : Bilmiyorum. Bu hafta sonu hava nasıl olacak?
+  TTFT            : 142 ms
+  İlk cümle süresi: 306 ms
+  Token/saniye    : 31.1
+
+Soru: Bana kısa bir tavsiye ver.
+  Cevap           : Tekrarlayacağım: Bana kısa bir tavsiye ver.
+  TTFT            : 141 ms
+  İlk cümle süresi: 672 ms
+  Token/saniye    : 28.2
+
+Soru: Türkiye'nin başkenti neresi?
+  Cevap           : İstanbul
+  TTFT            : 125 ms
+  İlk cümle süresi: 174 ms
+  Token/saniye    : 20.3
+
+Soru: Dur, yanlış anladın, ben salıyı kastettim.
+  Cevap           : Özür dilerim, salı için randevu almak istiyorsunuz.
+  TTFT            : 314 ms
+  İlk cümle süresi: 910 ms
+  Token/saniye    : 33.5
+
+
+=== qwen2.5:7b ===
+Isınma isteği gönderiliyor...
+Isınma tamamlandı (5568 ms)
+
+Soru: Yarın saat kaçta açıksınız?
+  Cevap           : Bu bilgiyi bilmiyorum.
+  TTFT            : 226 ms
+  İlk cümle süresi: 799 ms
+  Token/saniye    : 14.0
+
+Soru: Randevumu iptal etmek istiyorum.
+  Cevap           : Randevunuzu iptal etmek istiyorsunuz.
+  TTFT            : 259 ms
+  İlk cümle süresi: 1196 ms
+  Token/saniye    : 13.9
+
+Soru: Bu hafta sonu hava nasıl olacak?
+  Cevap           : Bilmiyorum. İletişim bilgilerini kontrol edin.
+  TTFT            : 255 ms
+  İlk cümle süresi: 622 ms
+  Token/saniye    : 14.5
+
+Soru: Bana kısa bir tavsiye ver.
+  Cevap           : Sorunuz hakkında daha fazla bilgi verirseniz daha iyi bir tavsiye verebilirim.
+  TTFT            : 252 ms
+  İlk cümle süresi: 1896 ms
+  Token/saniye    : 14.6
+
+Soru: Türkiye'nin başkenti neresi?
+  Cevap           : Ankara'nın başkenti Türkiye'dir.
+  TTFT            : 275 ms
+  İlk cümle süresi: 1039 ms
+  Token/saniye    : 14.4
+
+Soru: Dur, yanlış anladın, ben salıyı kastettim.
+  Cevap           : Randevunuz salı günü saat 10:00 için oluşturuldu.
+  TTFT            : 644 ms
+  İlk cümle süresi: 1807 ms
+  Token/saniye    : 14.6
+
+
+=== gemma3:4b ===
+Isınma isteği gönderiliyor...
+Isınma tamamlandı (4331 ms)
+
+Soru: Yarın saat kaçta açıksınız?
+  Cevap           : Şu an müsaitim, ancak yarın sabah 9'dan sonra çalışacağım.
+  TTFT            : 310 ms
+  İlk cümle süresi: 1069 ms
+  Token/saniye    : 23.7
+
+Soru: Randevumu iptal etmek istiyorum.
+  Cevap           : Tamamdır, anlaşıldı.
+  TTFT            : 349 ms
+  İlk cümle süresi: 681 ms
+  Token/saniye    : 24.2
+
+Soru: Bu hafta sonu hava nasıl olacak?
+  Cevap           : Tahminimce hafta sonu yağmur yağabilir.
+  TTFT            : 352 ms
+  İlk cümle süresi: 762 ms
+  Token/saniye    : 24.4
+
+Soru: Bana kısa bir tavsiye ver.
+  Cevap           : Kendine karşı nazik ol ve küçük zaferleri kutla.
+  TTFT            : 353 ms
+  İlk cümle süresi: 900 ms
+  Token/saniye    : 23.8
+
+Soru: Türkiye'nin başkenti neresi?
+  Cevap           : Ankara'dır.
+  TTFT            : 347 ms
+  İlk cümle süresi: 513 ms
+  Token/saniye    : 24.0
+
+Soru: Dur, yanlış anladın, ben salıyı kastettim.
+  Cevap           : Salı saat 10:00'daki randevunuzu yeniden ayarlıyorum.
+  TTFT            : 545 ms
+  İlk cümle süresi: 1302 ms
+  Token/saniye    : 23.8
+
+
+=== gemma3:4b + bilgi kartı ===
+Isınma isteği gönderiliyor...
+Isınma tamamlandı (557 ms)
+
+Soru: Yarın saat kaçta açıksınız?
+  Cevap           : Hafta içi 09:00-18:00 saatlerinde açığız.
+  TTFT            : 522 ms
+  İlk cümle süresi: 1388 ms
+  Token/saniye    : 24.2
+
+Soru: Randevumu iptal etmek istiyorum.
+  Cevap           : Randevularınızı telefonla veya buradan alabiliriz, ancak hava durumu veya genel bilgi taleplerinizi karşılayamayız.
+  TTFT            : 543 ms
+  İlk cümle süresi: 1611 ms
+  Token/saniye    : 23.4
+
+Soru: Bu hafta sonu hava nasıl olacak?
+  Cevap           : Üzgünüm, hava durumu bilgisine erişimim bulunmamaktadır.
+  TTFT            : 553 ms
+  İlk cümle süresi: 1163 ms
+  Token/saniye    : 24.6
+
+Soru: Bana kısa bir tavsiye ver.
+  Cevap           : Mükemmel bir tavsiye vermek için uygun bir pozisyonda değilim, ancak kendinize iyi bakın.
+  TTFT            : 554 ms
+  İlk cümle süresi: 1443 ms
+  Token/saniye    : 24.8
+
+Soru: Türkiye'nin başkenti neresi?
+  Cevap           : Üzgünüm, bu konuda yardımcı olamam.
+  TTFT            : 541 ms
+  İlk cümle süresi: 979 ms
+  Token/saniye    : 22.8
+
+Soru: Dur, yanlış anladın, ben salıyı kastettim.
+  Cevap           : Salı saat 10:00'a randevu almak isterseniz, size yardımcı olabilirim.
+  TTFT            : 754 ms
+  İlk cümle süresi: 1663 ms
+  Token/saniye    : 24.2
+
+
+====================================================================================================================================
+ÖZET  (ilk cümle süresi / token/saniye)
+====================================================================================================================================
+Soru                                qwen2.5:3b              qwen2.5:7b              gemma3:4b               gemma3:4b + bilgi kartı 
+------------------------------------------------------------------------------------------------------------------------------------
+Yarın saat kaçta açıksınız?         811ms / 30.3t/s         799ms / 14.0t/s         1069ms / 23.7t/s        1388ms / 24.2t/s        
+Randevumu iptal etmek istiyorum.    760ms / 29.6t/s         1196ms / 13.9t/s        681ms / 24.2t/s         1611ms / 23.4t/s        
+Bu hafta sonu hava nasıl olacak?    306ms / 31.1t/s         622ms / 14.5t/s         762ms / 24.4t/s         1163ms / 24.6t/s        
+Bana kısa bir tavsiye ver.          672ms / 28.2t/s         1896ms / 14.6t/s        900ms / 23.8t/s         1443ms / 24.8t/s        
+Türkiye'nin başkenti neresi?        174ms / 20.3t/s         1039ms / 14.4t/s        513ms / 24.0t/s         979ms / 22.8t/s         
+Dur, yanlış anladın, ben salıyı kastettim.910ms / 33.5t/s         1807ms / 14.6t/s        1302ms / 23.8t/s        1663ms / 24.2t/s        
+------------------------------------------------------------------------------------------------------------------------------------
+ORTALAMA                            606ms / 28.9t/s         1226ms / 14.3t/s        871ms / 24.0t/s         1374ms / 24.0t/s        

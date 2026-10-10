@@ -90,9 +90,13 @@ class Settings:
 
     # --- ASR (faster-whisper) ---
     asr_model_size: str
+    asr_partial_model: str
     asr_device: str
     asr_compute_type: str
     asr_language: str
+    asr_partial_interval_ms: int
+    asr_preroll_ms: int
+    asr_cpu_threads: int
 
     # --- LLM (Ollama HTTP API) ---
     llm_base_url: str
@@ -127,9 +131,13 @@ def _load() -> Settings:
         vad_min_silence_ms=_get_int("VAD_MIN_SILENCE_MS", 500),
         # ASR — varsayılan: Mac CPU için "small" / "int8"
         asr_model_size=_get_str("ASR_MODEL_SIZE", "small"),
+        asr_partial_model=_get_str("ASR_PARTIAL_MODEL", "tiny"),
         asr_device=_get_str("ASR_DEVICE", "cpu"),
         asr_compute_type=_get_str("ASR_COMPUTE_TYPE", "int8"),
         asr_language=_get_str("ASR_LANGUAGE", "tr"),
+        asr_partial_interval_ms=_get_int("ASR_PARTIAL_INTERVAL_MS", 500),
+        asr_preroll_ms=_get_int("ASR_PREROLL_MS", 500),
+        asr_cpu_threads=_get_int("ASR_CPU_THREADS", 4),
         # LLM — Ollama yerel sunucu
         llm_base_url=_get_str("LLM_BASE_URL", "http://localhost:11434"),
         llm_model=_get_str("LLM_MODEL", "qwen2.5:3b"),

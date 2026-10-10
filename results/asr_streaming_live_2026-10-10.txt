@@ -1,0 +1,50 @@
+(.venv) ege@Ege-MacBook-Pro SDS % python modules/asr.py
+StreamingASR canlı testi. Konuşun; VAD konuşmayı algılayınca
+ASR beslenmeye başlayacak, konuşma bitince FINAL basılacak.
+Partial modeli: tiny  |  Final modeli: small
+Partial aralığı: 500 ms.
+Pre-roll: 500 ms. Çıkmak için Ctrl+C.
+
+/Users/ege/Desktop/SDS/.venv/lib/python3.13/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+Whisper modeli yükleniyor: small (cpu, int8, cpu_threads=4)...
+Model yüklendi (1.032 s).
+Whisper modeli yükleniyor: tiny (cpu, int8, cpu_threads=4)...
+Model yüklendi (0.314 s).
+--- konuşma başladı ---
+[   821 ms] partial: "Merhaba."  (no_speech=0.19 logprob=-0.59)
+[StreamingASR] partial geride kaldı: transcribe 523 ms sürdü (eşik 500 ms)
+[  1849 ms] partial: "Merhaba."  (no_speech=0.01 logprob=-0.91)
+FINAL:   "Merhaba, jandev olmak istiyorum."
+  no_speech_prob=0.01  avg_logprob=-0.48
+SPEECH_END → FINAL: 1637 ms
+İlk partial        : 821 ms
+
+--- konuşma başladı ---
+[StreamingASR] partial geride kaldı: transcribe 636 ms sürdü (eşik 500 ms)
+[  1549 ms] partial: "Yerini arayadasın."  (no_speech=0.05 logprob=-1.07)
+[  2270 ms] partial: "yarın ayıdan sonra saat 3 ile 5'e"  (no_speech=0.03 logprob=-0.82)
+[  3005 ms] partial: "yarın ayeden sonra saat 3-5 herisle müsaat olur."  (no_speech=0.02 logprob=-0.98)
+[  3926 ms] partial: "Yarın ayeden sonra saat 3-5 yarısından müsaat olursanız sizi"  (no_speech=0.01 logprob=-0.88)
+[  4686 ms] partial: "Yarın ayeden sonra saat 3-5 yarısına müsaat olursanız sizinle kısa bir toplantıya."  (no_speech=0.01 logprob=-0.65)
+[  5453 ms] partial: "Yarın ayeden sonra saat 3-5 herisinden müsaat olursanız sizinle kısa bir toplantı yapmak istiyorum."  (no_speech=0.01 logprob=-0.72)
+FINAL:   "Yarın ayreden sonra saat 3 ile 5 arasına müsait olursanız, sizinle kısa bir toplantı yapmak istiyorum."
+  no_speech_prob=0.01  avg_logprob=-0.29
+SPEECH_END → FINAL: 2052 ms
+İlk partial        : 1549 ms
+
+--- konuşma başladı ---
+FINAL:   "Hı hı"
+  no_speech_prob=0.35  avg_logprob=-0.59
+SPEECH_END → FINAL: 1522 ms
+İlk partial        : (partial üretilmedi)
+
+--- konuşma başladı ---
+[   749 ms] partial: "Durdu."  (no_speech=0.18 logprob=-0.96)
+FINAL:   "tur tur"
+  no_speech_prob=0.07  avg_logprob=-0.64
+SPEECH_END → FINAL: 1543 ms
+İlk partial        : 749 ms
+
+^C
+Test bitti.

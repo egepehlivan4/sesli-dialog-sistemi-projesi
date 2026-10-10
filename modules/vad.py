@@ -26,6 +26,12 @@ from silero_vad import load_silero_vad
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import SETTINGS
 
+# VAD, StreamingASR ile aynı anda (ayrı thread'lerde) çalışır. torch'un
+# kendi thread havuzunu tek çekirdeğe sınırlamazsak, silero-vad'ın küçük
+# modeli bile whisper'ın cpu_threads'iyle çekirdek için yarışıp genel
+# transcribe süresini uzatabilir (bkz. modules/asr.py ASR_CPU_THREADS).
+torch.set_num_threads(1)
+
 # silero-vad bu proje için sabit 16 kHz / 512 örneklik pencere bekler
 # (ses hattımız config'te zaten 16000 Hz olarak tanımlı).
 SILERO_SAMPLE_RATE = 16000

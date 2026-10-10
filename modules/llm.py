@@ -22,8 +22,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import SETTINGS
 
 SYSTEM_PROMPT = (
-    "Sen Türkçe konuşan sesli bir asistansın. Yalnızca TEK kısa cümleyle "
-    "cevap ver. Emin olmadığın bilgiyi uydurma."
+    "Yalnızca tek kısa cümleyle Türkçe cevap ver. Emin olmadığın bilgiyi "
+    "uydurma, bilmiyorsan söyle."
 )
 
 # Düşük sıcaklık = daha az uydurma (hallucination), daha tutarlı cevap.
