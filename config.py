@@ -102,6 +102,7 @@ class Settings:
     llm_base_url: str
     llm_model: str
     llm_timeout_s: float
+    llm_temperature: float
     llm_compare_models: list
 
     # --- TTS (piper-tts) ---
@@ -145,6 +146,7 @@ def _load() -> Settings:
         llm_base_url=_get_str("LLM_BASE_URL", "http://localhost:11434"),
         llm_model=_get_str("LLM_MODEL", "gemma3:4b"),
         llm_timeout_s=_get_float("LLM_TIMEOUT_S", 30.0),
+        llm_temperature=_get_float("LLM_TEMPERATURE", 0.1),
         llm_compare_models=_get_list(
             "LLM_COMPARE_MODELS", ["qwen2.5:3b", "qwen2.5:7b", "gemma3:4b"]
         ),

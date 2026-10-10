@@ -40,9 +40,6 @@ def _load_system_prompt() -> str:
 
 SYSTEM_PROMPT = _load_system_prompt()
 
-# Düşük sıcaklık = daha az uydurma (hallucination), daha tutarlı cevap.
-DEFAULT_TEMPERATURE = 0.3
-
 # Bir cümlenin bittiğini kabul etmek için: nokta/ünlem/soru işareti(leri)
 # ve ardından boşluk. Boşluk şartı, "3.5" gibi ondalık sayılarda veya daha
 # token gelmeden erken bölünmeyi önler.
@@ -62,7 +59,8 @@ class LLM:
         self.base_url = (base_url or SETTINGS.llm_base_url).rstrip("/")
         self.model = model or SETTINGS.llm_model
         self.system_prompt = system_prompt if system_prompt is not None else SYSTEM_PROMPT
-        self.temperature = temperature if temperature is not None else DEFAULT_TEMPERATURE
+        # Düşük sıcaklık = daha az uydurma (hallucination), daha tutarlı cevap.
+        self.temperature = temperature if temperature is not None else SETTINGS.llm_temperature
         self.timeout = SETTINGS.llm_timeout_s
 
         self._session = requests.Session()

@@ -1,0 +1,24 @@
+{"elapsed_s": 9.634, "event": "session_start", "strategy": "vad_only"}
+{"elapsed_s": 11.439, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 13.195, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 13.195, "event": "speech_end"}
+{"elapsed_s": 15.002, "event": "asr_final", "text": "Cumartesi kaç kadarı çıksınız?", "no_speech_prob": 0.17394372820854187, "avg_logprob": -0.6173524643693652}
+{"elapsed_s": 15.002, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 15.003, "event": "llm_start"}
+{"elapsed_s": 15.007, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 15.007, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 15.007, "event": "state_change", "frm": "THINKING", "to": "LISTEN"}
+{"elapsed_s": 15.017, "event": "interrupt", "cutoff_ms": 9.246791996702086}
+{"elapsed_s": 15.022, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 15.022, "event": "speech_end"}
+{"elapsed_s": 16.476, "event": "turn_end", "interrupted": false, "played": 0}
+{"elapsed_s": 16.927, "event": "asr_final", "text": "Eyvallah.", "no_speech_prob": 0.3330206573009491, "avg_logprob": -0.9584217412131173}
+{"elapsed_s": 16.927, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 16.927, "event": "llm_start"}
+{"elapsed_s": 18.493, "event": "llm_sentence", "text": "Hangi saat diliminde randevu almak istersiniz?"}
+{"elapsed_s": 19.183, "event": "response_latency", "ms": 4160.908457997721}
+{"elapsed_s": 19.183, "event": "state_change", "frm": "THINKING", "to": "SPEAK"}
+{"elapsed_s": 19.184, "event": "tts_start", "text": "Hangi saat diliminde randevu almak istersiniz?"}
+{"elapsed_s": 19.184, "event": "tts_end", "text": "Hangi saat diliminde randevu almak istersiniz?"}
+{"elapsed_s": 19.184, "event": "turn_end", "interrupted": true, "played": 1}
+{"elapsed_s": 19.413, "event": "session_end", "turns": 2, "interrupts": 1}

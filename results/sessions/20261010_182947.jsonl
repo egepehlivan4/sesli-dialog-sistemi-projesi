@@ -1,0 +1,131 @@
+{"elapsed_s": 4.648, "event": "session_start", "strategy": "vad_only"}
+{"elapsed_s": 6.388, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 8.108, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 8.108, "event": "speech_end"}
+{"elapsed_s": 9.817, "event": "asr_final", "text": "Cumartesi kaçtı açıksınız.", "no_speech_prob": 0.0947900339961052, "avg_logprob": -0.3572849860558143}
+{"elapsed_s": 9.817, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 9.817, "event": "llm_start"}
+{"elapsed_s": 11.722, "event": "llm_sentence", "text": "Cumartesi için saat dilimini belirtir misiniz, böylece size uygun bir zaman bulabilirim?"}
+{"elapsed_s": 12.008, "event": "response_latency", "ms": 3899.2132499988656}
+{"elapsed_s": 12.008, "event": "state_change", "frm": "THINKING", "to": "SPEAK"}
+{"elapsed_s": 12.008, "event": "tts_start", "text": "Cumartesi için saat dilimini belirtir misiniz, böylece size uygun bir zaman bulabilirim?"}
+{"elapsed_s": 17.527, "event": "tts_end", "text": "Cumartesi için saat dilimini belirtir misiniz, böylece size uygun bir zaman bulabilirim?"}
+{"elapsed_s": 17.527, "event": "turn_end", "interrupted": false, "played": 1}
+{"elapsed_s": 17.527, "event": "state_change", "frm": "SPEAK", "to": "LISTEN"}
+{"elapsed_s": 21.515, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 22.357, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 22.357, "event": "speech_end"}
+{"elapsed_s": 23.917, "event": "asr_final", "text": "Sabahım.", "no_speech_prob": 0.08747392147779465, "avg_logprob": -0.8227581126349313}
+{"elapsed_s": 23.917, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 23.917, "event": "llm_start"}
+{"elapsed_s": 24.626, "event": "llm_sentence", "text": "Hangi gün ve saat sabahı tercih edersiniz?"}
+{"elapsed_s": 24.768, "event": "response_latency", "ms": 2409.688541003561}
+{"elapsed_s": 24.768, "event": "state_change", "frm": "THINKING", "to": "SPEAK"}
+{"elapsed_s": 24.768, "event": "tts_start", "text": "Hangi gün ve saat sabahı tercih edersiniz?"}
+{"elapsed_s": 27.807, "event": "tts_end", "text": "Hangi gün ve saat sabahı tercih edersiniz?"}
+{"elapsed_s": 27.807, "event": "turn_end", "interrupted": false, "played": 1}
+{"elapsed_s": 27.807, "event": "state_change", "frm": "SPEAK", "to": "LISTEN"}
+{"elapsed_s": 30.055, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 31.643, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 31.643, "event": "speech_end"}
+{"elapsed_s": 33.242, "event": "asr_final", "text": "Cumartesi sabah 10", "no_speech_prob": 0.09240108728408813, "avg_logprob": -0.33205122417873806}
+{"elapsed_s": 33.242, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 33.242, "event": "llm_start"}
+{"elapsed_s": 34.263, "event": "llm_sentence", "text": "Cumartesi 10:00'da size randevu ayarlayabilirim."}
+{"elapsed_s": 34.487, "event": "response_latency", "ms": 2844.1069580003386}
+{"elapsed_s": 34.487, "event": "state_change", "frm": "THINKING", "to": "SPEAK"}
+{"elapsed_s": 34.487, "event": "tts_start", "text": "Cumartesi 10:00'da size randevu ayarlayabilirim."}
+{"elapsed_s": 38.227, "event": "tts_end", "text": "Cumartesi 10:00'da size randevu ayarlayabilirim."}
+{"elapsed_s": 38.227, "event": "llm_sentence", "text": "Adınız ve soyadınız nedir, lütfen?"}
+{"elapsed_s": 38.327, "event": "tts_start", "text": "Adınız ve soyadınız nedir, lütfen?"}
+{"elapsed_s": 39.88, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 39.88, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 39.881, "event": "state_change", "frm": "SPEAK", "to": "LISTEN"}
+{"elapsed_s": 39.881, "event": "tts_end", "text": "Adınız ve soyadınız nedir, lütfen?"}
+{"elapsed_s": 39.881, "event": "turn_end", "interrupted": true, "played": 2}
+{"elapsed_s": 39.887, "event": "interrupt", "cutoff_ms": 6.209457998920698}
+{"elapsed_s": 41.774, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 41.775, "event": "speech_end"}
+{"elapsed_s": 43.424, "event": "asr_final", "text": "Dur azresiniz neresi?", "no_speech_prob": 0.061577439308166504, "avg_logprob": -0.40539950132369995}
+{"elapsed_s": 43.424, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 43.424, "event": "llm_start"}
+{"elapsed_s": 44.554, "event": "llm_sentence", "text": "Adınızı ve soyadınızı teyit eder misiniz, ardından randevuyu onaylayabilirim?"}
+{"elapsed_s": 44.787, "event": "response_latency", "ms": 3012.151750001067}
+{"elapsed_s": 44.787, "event": "state_change", "frm": "THINKING", "to": "SPEAK"}
+{"elapsed_s": 44.787, "event": "tts_start", "text": "Adınızı ve soyadınızı teyit eder misiniz, ardından randevuyu onaylayabilirim?"}
+{"elapsed_s": 49.747, "event": "tts_end", "text": "Adınızı ve soyadınızı teyit eder misiniz, ardından randevuyu onaylayabilirim?"}
+{"elapsed_s": 49.747, "event": "turn_end", "interrupted": false, "played": 1}
+{"elapsed_s": 49.747, "event": "state_change", "frm": "SPEAK", "to": "LISTEN"}
+{"elapsed_s": 50.997, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 52.281, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 52.281, "event": "speech_end"}
+{"elapsed_s": 53.9, "event": "asr_final", "text": "Ege pekli van.", "no_speech_prob": 0.08207644522190094, "avg_logprob": -0.735479736328125}
+{"elapsed_s": 53.9, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 53.9, "event": "llm_start"}
+{"elapsed_s": 54.546, "event": "llm_sentence", "text": "Teşekkür ederim Ege Pekli Van."}
+{"elapsed_s": 54.648, "event": "response_latency", "ms": 2365.36870800046}
+{"elapsed_s": 54.648, "event": "state_change", "frm": "THINKING", "to": "SPEAK"}
+{"elapsed_s": 54.648, "event": "tts_start", "text": "Teşekkür ederim Ege Pekli Van."}
+{"elapsed_s": 56.627, "event": "tts_end", "text": "Teşekkür ederim Ege Pekli Van."}
+{"elapsed_s": 56.627, "event": "llm_sentence", "text": "Cumartesi 10:00'da randevunuzu onaylıyorum."}
+{"elapsed_s": 56.787, "event": "tts_start", "text": "Cumartesi 10:00'da randevunuzu onaylıyorum."}
+{"elapsed_s": 57.158, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 57.158, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 57.158, "event": "state_change", "frm": "SPEAK", "to": "LISTEN"}
+{"elapsed_s": 57.158, "event": "tts_end", "text": "Cumartesi 10:00'da randevunuzu onaylıyorum."}
+{"elapsed_s": 57.159, "event": "turn_end", "interrupted": true, "played": 2}
+{"elapsed_s": 57.167, "event": "interrupt", "cutoff_ms": 8.812375002889894}
+{"elapsed_s": 59.175, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 59.175, "event": "speech_end"}
+{"elapsed_s": 60.884, "event": "asr_final", "text": "Dur, adresiniz neresi?", "no_speech_prob": 0.009348864667117596, "avg_logprob": -0.26653047402699787}
+{"elapsed_s": 60.884, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 60.884, "event": "llm_start"}
+{"elapsed_s": 61.914, "event": "llm_sentence", "text": "Adresimiz Örnek Mahallesi, Ankara'dır."}
+{"elapsed_s": 62.048, "event": "response_latency", "ms": 2872.0195420028176}
+{"elapsed_s": 62.048, "event": "state_change", "frm": "THINKING", "to": "SPEAK"}
+{"elapsed_s": 62.048, "event": "tts_start", "text": "Adresimiz Örnek Mahallesi, Ankara'dır."}
+{"elapsed_s": 64.787, "event": "tts_end", "text": "Adresimiz Örnek Mahallesi, Ankara'dır."}
+{"elapsed_s": 64.787, "event": "turn_end", "interrupted": false, "played": 1}
+{"elapsed_s": 64.787, "event": "state_change", "frm": "SPEAK", "to": "LISTEN"}
+{"elapsed_s": 65.938, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 67.396, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 67.396, "event": "speech_end"}
+{"elapsed_s": 69.001, "event": "asr_final", "text": "Muayene kadar sürüyor.", "no_speech_prob": 0.00492693530395627, "avg_logprob": -0.4465779304504395}
+{"elapsed_s": 69.001, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 69.002, "event": "llm_start"}
+{"elapsed_s": 69.843, "event": "llm_sentence", "text": "Muayene yaklaşık 30 dakika sürer."}
+{"elapsed_s": 69.968, "event": "response_latency", "ms": 2570.8535419980763}
+{"elapsed_s": 69.968, "event": "state_change", "frm": "THINKING", "to": "SPEAK"}
+{"elapsed_s": 69.968, "event": "tts_start", "text": "Muayene yaklaşık 30 dakika sürer."}
+{"elapsed_s": 72.28, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 72.28, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 72.28, "event": "state_change", "frm": "SPEAK", "to": "LISTEN"}
+{"elapsed_s": 72.28, "event": "tts_end", "text": "Muayene yaklaşık 30 dakika sürer."}
+{"elapsed_s": 72.28, "event": "turn_end", "interrupted": true, "played": 1}
+{"elapsed_s": 72.288, "event": "interrupt", "cutoff_ms": 6.554333995154593}
+{"elapsed_s": 72.998, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 72.998, "event": "speech_end"}
+{"elapsed_s": 74.55, "event": "asr_final", "text": "Hı hı.", "no_speech_prob": 0.32258084416389465, "avg_logprob": -0.6695448532700539}
+{"elapsed_s": 74.55, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 74.55, "event": "llm_start"}
+{"elapsed_s": 75.235, "event": "llm_sentence", "text": "Herhangi bir sorunuz var mı?"}
+{"elapsed_s": 75.327, "event": "response_latency", "ms": 2328.6739169998327}
+{"elapsed_s": 75.327, "event": "state_change", "frm": "THINKING", "to": "SPEAK"}
+{"elapsed_s": 75.327, "event": "tts_start", "text": "Herhangi bir sorunuz var mı?"}
+{"elapsed_s": 77.067, "event": "tts_end", "text": "Herhangi bir sorunuz var mı?"}
+{"elapsed_s": 77.067, "event": "turn_end", "interrupted": false, "played": 1}
+{"elapsed_s": 77.067, "event": "state_change", "frm": "SPEAK", "to": "LISTEN"}
+{"elapsed_s": 78.201, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 79.398, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 79.398, "event": "speech_end"}
+{"elapsed_s": 80.988, "event": "asr_final", "text": "Yok, teşekkürler.", "no_speech_prob": 0.14071711897850037, "avg_logprob": -0.5954728871583939}
+{"elapsed_s": 80.988, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 80.988, "event": "llm_start"}
+{"elapsed_s": 81.585, "event": "llm_sentence", "text": "Memnun oldum, iyi günler dilerim!"}
+{"elapsed_s": 81.687, "event": "response_latency", "ms": 2288.794166997832}
+{"elapsed_s": 81.687, "event": "state_change", "frm": "THINKING", "to": "SPEAK"}
+{"elapsed_s": 81.687, "event": "tts_start", "text": "Memnun oldum, iyi günler dilerim!"}
+{"elapsed_s": 83.887, "event": "tts_end", "text": "Memnun oldum, iyi günler dilerim!"}
+{"elapsed_s": 83.887, "event": "turn_end", "interrupted": false, "played": 1}
+{"elapsed_s": 83.887, "event": "state_change", "frm": "SPEAK", "to": "LISTEN"}
+{"elapsed_s": 84.84, "event": "session_end", "turns": 9, "interrupts": 3}

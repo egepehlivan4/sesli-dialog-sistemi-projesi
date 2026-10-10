@@ -163,13 +163,14 @@ def check_channel(
     (expected_diff_ms) SAPMASINA uygulanır.
 
     İki ayrı mod var:
-    - worst_threshold_ms: EN KÖTÜ sapma bunu aşarsa HİZALAMA SORUNU
+    - worst_threshold_ms: EN KÖTÜ |sapma| bunu aşarsa HİZALAMA SORUNU
       (sağ kanal -- tek bir hizalı olmayan olay bile anlamlı).
-    - mean_threshold_ms: ORTALAMA sapma bunu aşarsa HİZALAMA SORUNU
-      (sol kanal -- enerji eşiğiyle tespitin doğal ±150 ms dağılması
-      yüzünden tekil olaylar yanıltıcı olabilir; sabit bir kayma asıl
-      aranan şey). event_warn_ms verilmişse, bu eşiği aşan TEKİL
-      olaylar da (oturumu sorunlu saymadan) ayrıca işaretlenir.
+    - mean_threshold_ms: İŞARETLİ ortalama sapma (sabit kayma) bunu
+      aşarsa HİZALAMA SORUNU (sol kanal -- enerji eşiğiyle tespitin
+      doğal ±150 ms jitter'ı |sapma| ortalamasını şişirip sistematik
+      kaymayla karışabilir; işaretli ortalama jitter'ı söndürüp sadece
+      gerçek kaymayı gösterir). event_warn_ms verilmişse, bu eşiği aşan
+      TEKİL olaylar da (oturumu sorunlu saymadan) ayrıca işaretlenir.
 
     falling_edges + min_gap_s verilmişse: bir önceki ses bölümünün
     bitişinden min_gap_s'den az sonra başlayan olaylar (yeni bir
@@ -223,15 +224,29 @@ def check_channel(
     worst_diff = max(diffs_ms, key=abs)
     print(f"  Ortalama fark: {avg_diff:+6.1f} ms   En kötü fark: {worst_diff:+6.1f} ms")
 
-    deviations = [abs(d - expected_diff_ms) for d in diffs_ms]
-    avg_dev = sum(deviations) / len(deviations)
-    worst_dev = max(deviations)
+    # Dağınıklık: |sapma|'nın ortalaması -- rastgele jitter'ı (enerji eşiği
+    # tespitinin doğal dalgalanması) ölçer, YÖN taşımaz.
+    abs_deviations = [abs(d - expected_diff_ms) for d in diffs_ms]
+    avg_abs_dev = sum(abs_deviations) / len(abs_deviations)
+    worst_dev = max(abs_deviations)
+
+    # Sabit kayma: işaretli ortalama fark ile beklenenin farkı. Jitter
+    # (rastgele dağılım) ortalamada birbirini götürür; eğer SİSTEMATİK
+    # bir kayma varsa (ör. SessionRecorder bugı) işaretli ortalama da
+    # kayar -- asıl HİZALAMA SORUNU göstergesi budur, |sapma| ortalaması
+    # değil (o sadece dağınıklığı ölçer, yönlü kaymayı maskeler).
+    signed_mean_shift_ms = avg_diff - expected_diff_ms
+
     if expected_diff_ms:
-        print(f"  Beklenenden sapma: ortalama {avg_dev:6.1f} ms   en kötü {worst_dev:6.1f} ms")
+        print(f"  Dağınıklık (|sapma| ort.): {avg_abs_dev:6.1f} ms   en kötü {worst_dev:6.1f} ms")
+        print(f"  Sabit kayma (işaretli ort. sapma): {signed_mean_shift_ms:+6.1f} ms")
 
     if mean_threshold_ms is not None:
-        if avg_dev > mean_threshold_ms:
-            print(f"  HİZALAMA SORUNU: ortalama sapma {avg_dev:.1f} ms > {mean_threshold_ms:.0f} ms (sabit kayma)")
+        if abs(signed_mean_shift_ms) > mean_threshold_ms:
+            print(
+                f"  HİZALAMA SORUNU: sabit kayma {signed_mean_shift_ms:+.1f} ms, "
+                f"{mean_threshold_ms:.0f} ms eşiğini aşıyor"
+            )
     elif worst_threshold_ms is not None and worst_dev > worst_threshold_ms:
         print(f"  HİZALAMA SORUNU: en kötü sapma {worst_dev:.1f} ms > {worst_threshold_ms:.0f} ms eşiği")
 
