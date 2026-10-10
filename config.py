@@ -109,6 +109,9 @@ class Settings:
     tts_model_path: Path
     tts_config_path: Path
 
+    # --- Controller (barge-in) ---
+    barge_in_strategy: str
+
 
 def _load() -> Settings:
     models_dir = _get_path("MODELS_DIR", BASE_DIR / "models")
@@ -140,7 +143,7 @@ def _load() -> Settings:
         asr_cpu_threads=_get_int("ASR_CPU_THREADS", 4),
         # LLM — Ollama yerel sunucu
         llm_base_url=_get_str("LLM_BASE_URL", "http://localhost:11434"),
-        llm_model=_get_str("LLM_MODEL", "qwen2.5:3b"),
+        llm_model=_get_str("LLM_MODEL", "gemma3:4b"),
         llm_timeout_s=_get_float("LLM_TIMEOUT_S", 30.0),
         llm_compare_models=_get_list(
             "LLM_COMPARE_MODELS", ["qwen2.5:3b", "qwen2.5:7b", "gemma3:4b"]
@@ -151,6 +154,8 @@ def _load() -> Settings:
         tts_config_path=_get_path(
             "TTS_CONFIG_PATH", models_dir / f"{tts_voice}.onnx.json"
         ),
+        # Controller — barge-in stratejisi (bkz. modules/strategies.py)
+        barge_in_strategy=_get_str("BARGE_IN_STRATEGY", "vad_only"),
     )
 
 
