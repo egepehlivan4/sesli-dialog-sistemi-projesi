@@ -247,10 +247,17 @@ class Controller:
     # --- kurulum -----------------------------------------------------
 
     def load(self) -> None:
-        """Açılışta modelleri yükler ve LLM'i ısıtır (ilk tur bu
-        yüzden yavaş olmasın diye)."""
+        """Açılışta modelleri yükler, LLM'i ve her iki whisper modelini
+        (partial: tiny, final: small) ısıtır -- ilk kullanıcı cümlesi
+        soğuk modele denk gelmesin diye."""
         self.asr.load()
-        self.llm.warmup()
+
+        warmup_times = self.asr.warmup()
+        self._ui(f"ASR ısınma (partial/tiny) : {warmup_times['partial'] * 1000:.0f} ms")
+        self._ui(f"ASR ısınma (final/small)  : {warmup_times['final'] * 1000:.0f} ms")
+
+        llm_warmup_s = self.llm.warmup()
+        self._ui(f"LLM ısınma                : {llm_warmup_s * 1000:.0f} ms")
 
     # --- state yardımcıları -------------------------------------------
 

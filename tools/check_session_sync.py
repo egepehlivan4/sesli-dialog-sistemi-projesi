@@ -9,8 +9,16 @@ olduğunu kontrol eder (bkz. modules/controller.py SessionRecorder).
   min_speech_ms kadar (varsayılan 250 ms) gecikmeli bildirdiği için ses,
   olaydan biraz ÖNCE (negatif fark) başlamış olmalı.
 
-Her iki kanal için ortalama ve en kötü (mutlak) farkı basar; en kötü
-fark 100 ms'den büyükse "HİZALAMA SORUNU" uyarısı verir.
+Sağ kanal: ortalama ve en kötü (mutlak) farkı basar; en kötü fark
+100 ms'den büyükse "HİZALAMA SORUNU" der.
+
+Sol kanal (enerji eşiğiyle başlangıç tespiti yapıldığı için ±150 ms
+dağınıklık doğaldır): ORTALAMA sapma (beklenen ~-VAD_MIN_SPEECH_MS'ten)
+100 ms'yi aşarsa -- yani sabit bir kayma varsa -- "HİZALAMA SORUNU"
+der; tekil bir olayın sapması 250 ms'yi aşarsa sadece o olay için uyarı
+basar (tüm oturumu sorunlu saymaz). Bir önceki ses bölümünün bitişinden
+300 ms'den az sonra başlayan olaylar için (yeni bir başlangıç kenarı
+ayırt edilemeyeceğinden) "bulunamadı" yerine "bitişik, atlandı" yazar.
 
 Sadece numpy ve standart kütüphane kullanır (matplotlib'e bağımlı
 değildir -- bkz. tools/plot_session.py).
@@ -34,7 +42,12 @@ from config import SETTINGS
 FRAME_MS = 20.0
 SEARCH_BEFORE_S = 0.5
 SEARCH_AFTER_S = 0.5
-ALIGNMENT_THRESHOLD_MS = 100.0
+
+ALIGNMENT_THRESHOLD_MS = 100.0  # sağ kanal: en kötü sapma eşiği
+
+LEFT_MEAN_THRESHOLD_MS = 100.0  # sol kanal: ORTALAMA sapma eşiği (sabit kayma şüphesi)
+LEFT_EVENT_WARN_MS = 250.0  # sol kanal: tekil olay uyarı eşiği (enerji eşiği dağılma payı)
+MIN_ADJACENT_GAP_S = 0.3  # bundan az sonra başlayan olay "bitişik" sayılır
 
 
 def resolve_session_stem(arg: str = None) -> Path:
@@ -107,11 +120,27 @@ def find_rising_edges(rms: np.ndarray, frame_len: int, sample_rate: int, thresho
     return edges
 
 
+def find_falling_edges(rms: np.ndarray, frame_len: int, sample_rate: int, threshold: float) -> list:
+    """Enerjinin eşiğin ALTINA düştüğü anlar -- bir ses bölümünün
+    bittiği an. "bitişik, atlandı" teşhisi için kullanılır."""
+    above = rms > threshold
+    edges = []
+    for i in range(1, len(above)):
+        if not above[i] and above[i - 1]:
+            edges.append(i * frame_len / sample_rate)
+    return edges
+
+
 def nearest_edge(edges: list, target_s: float, before_s: float, after_s: float):
     candidates = [e for e in edges if target_s - before_s <= e <= target_s + after_s]
     if not candidates:
         return None
     return min(candidates, key=lambda e: abs(e - target_s))
+
+
+def latest_before(edges: list, target_s: float):
+    candidates = [e for e in edges if e <= target_s]
+    return max(candidates) if candidates else None
 
 
 def check_channel(
@@ -121,13 +150,31 @@ def check_channel(
     before_s: float,
     after_s: float,
     expected_diff_ms: float = 0.0,
+    falling_edges: list = None,
+    min_gap_s: float = 0.0,
+    worst_threshold_ms: float = None,
+    mean_threshold_ms: float = None,
+    event_warn_ms: float = None,
 ) -> list:
     """fark = ses_başlangıcı - olay_zamanı. Sol kanalda VAD'ın kendi
     algılama gecikmesi (varsayılan ~250 ms) yüzünden fark normalde ~0
     değil, ~-250 ms'dir -- bu YANLIŞ hizalama değildir. Bu yüzden
-    HİZALAMA SORUNU eşiği ham farka değil, farkın BEKLENEN değerden
-    (expected_diff_ms) SAPMASINA uygulanır; ham ortalama/en kötü fark
-    da ayrıca (olduğu gibi) yazdırılır."""
+    HİZALAMA SORUNU kararı ham farka değil, farkın BEKLENEN değerden
+    (expected_diff_ms) SAPMASINA uygulanır.
+
+    İki ayrı mod var:
+    - worst_threshold_ms: EN KÖTÜ sapma bunu aşarsa HİZALAMA SORUNU
+      (sağ kanal -- tek bir hizalı olmayan olay bile anlamlı).
+    - mean_threshold_ms: ORTALAMA sapma bunu aşarsa HİZALAMA SORUNU
+      (sol kanal -- enerji eşiğiyle tespitin doğal ±150 ms dağılması
+      yüzünden tekil olaylar yanıltıcı olabilir; sabit bir kayma asıl
+      aranan şey). event_warn_ms verilmişse, bu eşiği aşan TEKİL
+      olaylar da (oturumu sorunlu saymadan) ayrıca işaretlenir.
+
+    falling_edges + min_gap_s verilmişse: bir önceki ses bölümünün
+    bitişinden min_gap_s'den az sonra başlayan olaylar (yeni bir
+    başlangıç kenarı ayırt edilemeyeceği için) "bulunamadı" yerine
+    "bitişik, atlandı" olarak işaretlenir ve soruna sayılmaz."""
     print(f"\n--- {title} ---")
     if expected_diff_ms:
         print(f"  (beklenen fark: ~{expected_diff_ms:+.0f} ms -- VAD algılama gecikmesi)")
@@ -136,20 +183,40 @@ def check_channel(
         return []
 
     diffs_ms = []
+    not_found = 0
+    adjacent = 0
+
     for t in event_times:
         onset = nearest_edge(edges, t, before_s, after_s)
         if onset is None:
-            print(f"  olay @ {t:7.3f}s : ses başlangıcı bulunamadı (±{before_s:.1f}/{after_s:.1f}s penceresinde)")
+            preceding_end = latest_before(falling_edges, t) if falling_edges else None
+            if preceding_end is not None and (t - preceding_end) < min_gap_s:
+                adjacent += 1
+                gap_ms = (t - preceding_end) * 1000
+                print(f"  olay @ {t:7.3f}s : bitişik, atlandı (önceki ses bölümü {gap_ms:.0f} ms önce bitti)")
+            else:
+                not_found += 1
+                print(
+                    f"  olay @ {t:7.3f}s : ses başlangıcı bulunamadı (±{before_s:.1f}/{after_s:.1f}s penceresinde)"
+                )
             continue
+
         diff_ms = (onset - t) * 1000
         diffs_ms.append(diff_ms)
-        print(f"  olay @ {t:7.3f}s : ses başlangıcı {onset:7.3f}s   (fark {diff_ms:+7.1f} ms)")
+        deviation_ms = abs(diff_ms - expected_diff_ms)
+        warn = ""
+        if event_warn_ms is not None and deviation_ms > event_warn_ms:
+            warn = f"   ⚠ uyarı: sapma {deviation_ms:.0f} ms > {event_warn_ms:.0f} ms"
+        print(f"  olay @ {t:7.3f}s : ses başlangıcı {onset:7.3f}s   (fark {diff_ms:+7.1f} ms){warn}")
 
     if not diffs_ms:
-        print(
-            f"  HİZALAMA SORUNU: {len(event_times)} olayın HİÇBİRİ için pencere içinde ses "
-            "başlangıcı bulunamadı (kanal muhtemelen fena hâlde kaymış)"
-        )
+        if not_found:
+            print(
+                f"  HİZALAMA SORUNU: {not_found} olay için pencere içinde ses başlangıcı "
+                "bulunamadı (kanal muhtemelen fena hâlde kaymış)"
+            )
+        else:
+            print("  (tüm olaylar bir önceki ses bölümüne bitişikti, karşılaştırma yapılamadı)")
         return diffs_ms
 
     avg_diff = sum(diffs_ms) / len(diffs_ms)
@@ -157,12 +224,16 @@ def check_channel(
     print(f"  Ortalama fark: {avg_diff:+6.1f} ms   En kötü fark: {worst_diff:+6.1f} ms")
 
     deviations = [abs(d - expected_diff_ms) for d in diffs_ms]
+    avg_dev = sum(deviations) / len(deviations)
     worst_dev = max(deviations)
     if expected_diff_ms:
-        avg_dev = sum(deviations) / len(deviations)
         print(f"  Beklenenden sapma: ortalama {avg_dev:6.1f} ms   en kötü {worst_dev:6.1f} ms")
-    if worst_dev > ALIGNMENT_THRESHOLD_MS:
-        print(f"  HİZALAMA SORUNU: en kötü sapma {worst_dev:.1f} ms > {ALIGNMENT_THRESHOLD_MS:.0f} ms eşiği")
+
+    if mean_threshold_ms is not None:
+        if avg_dev > mean_threshold_ms:
+            print(f"  HİZALAMA SORUNU: ortalama sapma {avg_dev:.1f} ms > {mean_threshold_ms:.0f} ms (sabit kayma)")
+    elif worst_threshold_ms is not None and worst_dev > worst_threshold_ms:
+        print(f"  HİZALAMA SORUNU: en kötü sapma {worst_dev:.1f} ms > {worst_threshold_ms:.0f} ms eşiği")
 
     return diffs_ms
 
@@ -194,6 +265,7 @@ def main() -> None:
     right_threshold = adaptive_threshold(right_rms)
     left_edges = find_rising_edges(left_rms, left_frame_len, sample_rate, left_threshold)
     right_edges = find_rising_edges(right_rms, right_frame_len, sample_rate, right_threshold)
+    left_falling_edges = find_falling_edges(left_rms, left_frame_len, sample_rate, left_threshold)
 
     print(f"Oturum          : {stem.name}")
     print(f"Örnekleme hızı  : {sample_rate} Hz")
@@ -207,6 +279,7 @@ def main() -> None:
         before_s=SEARCH_BEFORE_S,
         after_s=SEARCH_AFTER_S,
         expected_diff_ms=0.0,
+        worst_threshold_ms=ALIGNMENT_THRESHOLD_MS,
     )
     check_channel(
         "SOL KANAL: SPEECH_START -> mikrofondaki konuşmanın başlaması (olaydan önce beklenir)",
@@ -215,6 +288,10 @@ def main() -> None:
         before_s=SEARCH_BEFORE_S,
         after_s=0.0,
         expected_diff_ms=-float(SETTINGS.vad_min_speech_ms),
+        falling_edges=left_falling_edges,
+        min_gap_s=MIN_ADJACENT_GAP_S,
+        mean_threshold_ms=LEFT_MEAN_THRESHOLD_MS,
+        event_warn_ms=LEFT_EVENT_WARN_MS,
     )
 
 

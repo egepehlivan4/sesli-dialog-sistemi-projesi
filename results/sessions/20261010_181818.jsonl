@@ -1,0 +1,103 @@
+{"elapsed_s": 7.835, "event": "session_start", "strategy": "vad_only"}
+{"elapsed_s": 9.276, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 10.698, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 10.698, "event": "speech_end"}
+{"elapsed_s": 15.59, "event": "asr_final", "text": "Cumartesi Atik Mısans.", "no_speech_prob": 0.03983661159873009, "avg_logprob": -1.0466273128986359}
+{"elapsed_s": 15.591, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 15.591, "event": "llm_start"}
+{"elapsed_s": 17.362, "event": "llm_sentence", "text": "Elbette, cumartesi için hangi saat dilimini tercih edersiniz?"}
+{"elapsed_s": 17.614, "event": "response_latency", "ms": 6915.008291005506}
+{"elapsed_s": 17.614, "event": "state_change", "frm": "THINKING", "to": "SPEAK"}
+{"elapsed_s": 17.614, "event": "tts_start", "text": "Elbette, cumartesi için hangi saat dilimini tercih edersiniz?"}
+{"elapsed_s": 21.833, "event": "tts_end", "text": "Elbette, cumartesi için hangi saat dilimini tercih edersiniz?"}
+{"elapsed_s": 21.833, "event": "turn_end", "interrupted": false, "played": 1}
+{"elapsed_s": 21.833, "event": "state_change", "frm": "SPEAK", "to": "LISTEN"}
+{"elapsed_s": 23.789, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 25.088, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 25.088, "event": "speech_end"}
+{"elapsed_s": 26.686, "event": "asr_final", "text": "Rendeva almak istiyorum.", "no_speech_prob": 0.024910926818847656, "avg_logprob": -0.7078401625156403}
+{"elapsed_s": 26.687, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 26.687, "event": "llm_start"}
+{"elapsed_s": 27.372, "event": "llm_sentence", "text": "Adınız ve soyadınız lütfen?"}
+{"elapsed_s": 27.514, "event": "response_latency", "ms": 2425.03187499824}
+{"elapsed_s": 27.514, "event": "state_change", "frm": "THINKING", "to": "SPEAK"}
+{"elapsed_s": 27.514, "event": "tts_start", "text": "Adınız ve soyadınız lütfen?"}
+{"elapsed_s": 29.393, "event": "tts_end", "text": "Adınız ve soyadınız lütfen?"}
+{"elapsed_s": 29.394, "event": "llm_sentence", "text": "Ayrıca, randevu almak istediğiniz gün ve saat dilimini de belirtir misiniz?"}
+{"elapsed_s": 29.614, "event": "tts_start", "text": "Ayrıca, randevu almak istediğiniz gün ve saat dilimini de belirtir misiniz?"}
+{"elapsed_s": 34.933, "event": "tts_end", "text": "Ayrıca, randevu almak istediğiniz gün ve saat dilimini de belirtir misiniz?"}
+{"elapsed_s": 34.933, "event": "turn_end", "interrupted": false, "played": 2}
+{"elapsed_s": 34.933, "event": "state_change", "frm": "SPEAK", "to": "LISTEN"}
+{"elapsed_s": 36.349, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 37.466, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 37.466, "event": "speech_end"}
+{"elapsed_s": 39.067, "event": "asr_final", "text": "Egepeklivan.", "no_speech_prob": 0.06848814338445663, "avg_logprob": -0.7568572362263998}
+{"elapsed_s": 39.068, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 39.068, "event": "llm_start"}
+{"elapsed_s": 39.072, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 39.072, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 39.072, "event": "state_change", "frm": "THINKING", "to": "LISTEN"}
+{"elapsed_s": 39.073, "event": "interrupt", "cutoff_ms": 1.165207999292761}
+{"elapsed_s": 39.367, "event": "turn_end", "interrupted": false, "played": 0}
+{"elapsed_s": 39.425, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 39.425, "event": "speech_end"}
+{"elapsed_s": 40.984, "event": "asr_final", "text": "Salı saat 3.", "no_speech_prob": 0.09605443477630615, "avg_logprob": -0.5593606308102608}
+{"elapsed_s": 40.984, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 40.984, "event": "llm_start"}
+{"elapsed_s": 42.359, "event": "llm_sentence", "text": "Tamamdır, Egepeklivan, salı saat 15:00'lik bir randevu ayarlıyorum size."}
+{"elapsed_s": 42.734, "event": "response_latency", "ms": 3307.511749997502}
+{"elapsed_s": 42.734, "event": "state_change", "frm": "THINKING", "to": "SPEAK"}
+{"elapsed_s": 42.734, "event": "tts_start", "text": "Tamamdır, Egepeklivan, salı saat 15:00'lik bir randevu ayarlıyorum size."}
+{"elapsed_s": 47.147, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 47.147, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 47.147, "event": "state_change", "frm": "SPEAK", "to": "LISTEN"}
+{"elapsed_s": 47.147, "event": "tts_end", "text": "Tamamdır, Egepeklivan, salı saat 15:00'lik bir randevu ayarlıyorum size."}
+{"elapsed_s": 47.147, "event": "turn_end", "interrupted": true, "played": 1}
+{"elapsed_s": 47.154, "event": "interrupt", "cutoff_ms": 6.090292001317721}
+{"elapsed_s": 49.548, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 49.548, "event": "speech_end"}
+{"elapsed_s": 51.266, "event": "asr_final", "text": "E dur salı saat beşe alabilir miyim?", "no_speech_prob": 0.08434714376926422, "avg_logprob": -0.44431315660476683}
+{"elapsed_s": 51.266, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 51.266, "event": "llm_start"}
+{"elapsed_s": 53.043, "event": "llm_sentence", "text": "Elbette, salı saat 15:00 yerine saat 16:00'lık bir randevu ayarlayabilirim."}
+{"elapsed_s": 53.574, "event": "response_latency", "ms": 4024.8830420023296}
+{"elapsed_s": 53.574, "event": "state_change", "frm": "THINKING", "to": "SPEAK"}
+{"elapsed_s": 53.574, "event": "tts_start", "text": "Elbette, salı saat 15:00 yerine saat 16:00'lık bir randevu ayarlayabilirim."}
+{"elapsed_s": 60.153, "event": "tts_end", "text": "Elbette, salı saat 15:00 yerine saat 16:00'lık bir randevu ayarlayabilirim."}
+{"elapsed_s": 60.154, "event": "llm_sentence", "text": "Bu şekilde olur mu?"}
+{"elapsed_s": 60.234, "event": "tts_start", "text": "Bu şekilde olur mu?"}
+{"elapsed_s": 61.433, "event": "tts_end", "text": "Bu şekilde olur mu?"}
+{"elapsed_s": 61.433, "event": "turn_end", "interrupted": false, "played": 2}
+{"elapsed_s": 61.433, "event": "state_change", "frm": "SPEAK", "to": "LISTEN"}
+{"elapsed_s": 64.184, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 66.027, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 66.027, "event": "speech_end"}
+{"elapsed_s": 67.722, "event": "asr_final", "text": "olur muayene kadar sürüyor", "no_speech_prob": 0.01761225424706936, "avg_logprob": -0.26104808449745176}
+{"elapsed_s": 67.722, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 67.723, "event": "llm_start"}
+{"elapsed_s": 68.671, "event": "llm_sentence", "text": "Evet, muayene yaklaşık 30 dakika sürer."}
+{"elapsed_s": 68.814, "event": "response_latency", "ms": 2785.5541669996455}
+{"elapsed_s": 68.814, "event": "state_change", "frm": "THINKING", "to": "SPEAK"}
+{"elapsed_s": 68.814, "event": "tts_start", "text": "Evet, muayene yaklaşık 30 dakika sürer."}
+{"elapsed_s": 70.664, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 70.664, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 70.664, "event": "state_change", "frm": "SPEAK", "to": "LISTEN"}
+{"elapsed_s": 70.664, "event": "tts_end", "text": "Evet, muayene yaklaşık 30 dakika sürer."}
+{"elapsed_s": 70.664, "event": "turn_end", "interrupted": true, "played": 1}
+{"elapsed_s": 70.673, "event": "interrupt", "cutoff_ms": 8.654457997181453}
+{"elapsed_s": 71.368, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 71.368, "event": "speech_end"}
+{"elapsed_s": 73.291, "event": "asr_final", "text": "Hıhı", "no_speech_prob": 0.20630580186843872, "avg_logprob": -0.7289139032363892}
+{"elapsed_s": 73.291, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 73.291, "event": "llm_start"}
+{"elapsed_s": 74.925, "event": "llm_sentence", "text": "Harika, salı saat 16:00'ta Egepeklivan için randevunuz kesinleşti."}
+{"elapsed_s": 75.294, "event": "response_latency", "ms": 3925.358791995677}
+{"elapsed_s": 75.294, "event": "state_change", "frm": "THINKING", "to": "SPEAK"}
+{"elapsed_s": 75.294, "event": "tts_start", "text": "Harika, salı saat 16:00'ta Egepeklivan için randevunuz kesinleşti."}
+{"elapsed_s": 80.413, "event": "tts_end", "text": "Harika, salı saat 16:00'ta Egepeklivan için randevunuz kesinleşti."}
+{"elapsed_s": 80.413, "event": "llm_sentence", "text": "İyi günler dilerim!"}
+{"elapsed_s": 80.493, "event": "tts_start", "text": "İyi günler dilerim!"}
+{"elapsed_s": 81.813, "event": "tts_end", "text": "İyi günler dilerim!"}
+{"elapsed_s": 81.813, "event": "turn_end", "interrupted": false, "played": 2}
+{"elapsed_s": 81.813, "event": "state_change", "frm": "SPEAK", "to": "LISTEN"}
+{"elapsed_s": 82.742, "event": "session_end", "turns": 7, "interrupts": 3}

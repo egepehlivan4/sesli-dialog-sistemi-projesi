@@ -232,6 +232,23 @@ class StreamingASR:
         self._final_asr.load()
         self._partial_asr.load()
 
+    def warmup(self) -> dict:
+        """Her iki modeli de (partial: tiny, final: small) 1 saniyelik
+        sessizlikle GERÇEK bir transcribe çağrısıyla ısıtır -- ilk
+        kullanıcı cümlesi soğuk modele denk gelmesin diye. Isınma
+        süresini saniye olarak döner: {"partial": ..., "final": ...}."""
+        silence = np.zeros(self.sample_rate, dtype=np.float32)  # 1 s
+
+        start = time.perf_counter()
+        self._partial_asr.transcribe_detailed(silence, self.sample_rate, beam_size=1)
+        partial_s = time.perf_counter() - start
+
+        start = time.perf_counter()
+        self._final_asr.transcribe_detailed(silence, self.sample_rate)
+        final_s = time.perf_counter() - start
+
+        return {"partial": partial_s, "final": final_s}
+
     def feed_preroll(self, chunk: np.ndarray) -> None:
         """Konuşma durumundan BAĞIMSIZ, her mikrofon chunk'ında çağrılır;
         son preroll_ms kadar sesi sürekli tutar. reset() bu tamponu yeni
