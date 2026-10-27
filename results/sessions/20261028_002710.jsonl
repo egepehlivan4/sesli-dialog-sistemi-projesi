@@ -1,0 +1,93 @@
+{"elapsed_s": 7.656, "event": "session_start", "strategy": "vad_only"}
+{"elapsed_s": 8.359, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 14.962, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 14.962, "event": "speech_end"}
+{"elapsed_s": 30.187, "event": "asr_final", "text": "Masada, masada, masada, el yerlerden kayatıksın. Alın bana mı rahat olmaya mı? Sets karda kulaklık alın, ama eysinin anı yüzlerim.", "no_speech_prob": 0.3770897686481476, "avg_logprob": -1.0350771383805708}
+{"elapsed_s": 30.187, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 30.189, "event": "llm_start"}
+{"elapsed_s": 30.235, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 30.235, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 30.236, "event": "state_change", "frm": "THINKING", "to": "LISTEN"}
+{"elapsed_s": 30.252, "event": "interrupt", "cutoff_ms": 16.475899999932153}
+{"elapsed_s": 30.308, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 30.308, "event": "speech_end"}
+{"elapsed_s": 30.553, "event": "turn_end", "interrupted": false, "played": 0}
+{"elapsed_s": 32.964, "event": "asr_final", "text": "Ağabey bizi duyuyor şu an. Hemen de eline indireyim, bir sen mi?", "no_speech_prob": 0.030580850318074226, "avg_logprob": -0.8245617832456317}
+{"elapsed_s": 32.965, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 32.966, "event": "llm_start"}
+{"elapsed_s": 32.975, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 32.975, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 32.975, "event": "state_change", "frm": "THINKING", "to": "LISTEN"}
+{"elapsed_s": 33.004, "event": "interrupt", "cutoff_ms": 29.05729999997675}
+{"elapsed_s": 33.1, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 33.1, "event": "speech_end"}
+{"elapsed_s": 35.355, "event": "turn_end", "interrupted": false, "played": 0}
+{"elapsed_s": 35.924, "event": "asr_final", "text": "sert adam sert dinle anlaşılmaz. Boris çocuğu takipten anlayacak bir adam değil.", "no_speech_prob": 0.07090087234973907, "avg_logprob": -0.46799312212637495}
+{"elapsed_s": 35.925, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 35.925, "event": "llm_start"}
+{"elapsed_s": 35.934, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 35.934, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 35.934, "event": "state_change", "frm": "THINKING", "to": "LISTEN"}
+{"elapsed_s": 35.97, "event": "interrupt", "cutoff_ms": 35.36780000001727}
+{"elapsed_s": 35.998, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 35.998, "event": "speech_end"}
+{"elapsed_s": 38.341, "event": "turn_end", "interrupted": false, "played": 0}
+{"elapsed_s": 38.365, "event": "asr_final", "text": "Geri kumamına kuyusundu, yoruldu.", "no_speech_prob": 0.26627200841903687, "avg_logprob": -0.9802313208580017}
+{"elapsed_s": 38.365, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 38.366, "event": "llm_start"}
+{"elapsed_s": 38.373, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 38.373, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 38.373, "event": "state_change", "frm": "THINKING", "to": "LISTEN"}
+{"elapsed_s": 38.412, "event": "interrupt", "cutoff_ms": 38.84040000002642}
+{"elapsed_s": 38.505, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 38.505, "event": "speech_end"}
+{"elapsed_s": 40.765, "event": "turn_end", "interrupted": false, "played": 0}
+{"elapsed_s": 42.036, "event": "asr_final", "text": "Şuan gidip o adamdan sırf en pazar.", "no_speech_prob": 0.5583900809288025, "avg_logprob": -0.7798130996525288}
+{"elapsed_s": 42.037, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 42.038, "event": "llm_start"}
+{"elapsed_s": 42.072, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 42.072, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 42.072, "event": "state_change", "frm": "THINKING", "to": "LISTEN"}
+{"elapsed_s": 42.093, "event": "interrupt", "cutoff_ms": 20.1388999998926}
+{"elapsed_s": 42.157, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 42.157, "event": "speech_end"}
+{"elapsed_s": 44.521, "event": "turn_end", "interrupted": false, "played": 0}
+{"elapsed_s": 44.963, "event": "asr_final", "text": "Masada masada yerlerdeki", "no_speech_prob": 0.14930830895900726, "avg_logprob": -0.7112760435451161}
+{"elapsed_s": 44.963, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 44.964, "event": "llm_start"}
+{"elapsed_s": 44.972, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 44.972, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 44.972, "event": "state_change", "frm": "THINKING", "to": "LISTEN"}
+{"elapsed_s": 44.972, "event": "interrupt", "cutoff_ms": 0.10459999998602143}
+{"elapsed_s": 45.011, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 45.012, "event": "speech_end"}
+{"elapsed_s": 47.2, "event": "asr_final", "text": "Sıkardık ulan bu kadar.", "no_speech_prob": 0.15239427983760834, "avg_logprob": -0.9702666898568472}
+{"elapsed_s": 47.361, "event": "turn_end", "interrupted": false, "played": 0}
+{"elapsed_s": 47.362, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 47.363, "event": "llm_start"}
+{"elapsed_s": 47.401, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 47.401, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 47.401, "event": "state_change", "frm": "THINKING", "to": "LISTEN"}
+{"elapsed_s": 47.405, "event": "interrupt", "cutoff_ms": 3.065699999979188}
+{"elapsed_s": 47.417, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 47.417, "event": "speech_end"}
+{"elapsed_s": 49.402, "event": "asr_final", "text": "Merhaba.", "no_speech_prob": 0.08229322731494904, "avg_logprob": -0.6613046924273173}
+{"elapsed_s": 49.741, "event": "turn_end", "interrupted": false, "played": 0}
+{"elapsed_s": 49.741, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 49.742, "event": "llm_start"}
+{"elapsed_s": 49.806, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 49.806, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 49.806, "event": "state_change", "frm": "THINKING", "to": "LISTEN"}
+{"elapsed_s": 49.848, "event": "interrupt", "cutoff_ms": 40.244900000061534}
+{"elapsed_s": 52.143, "event": "turn_end", "interrupted": false, "played": 0}
+{"elapsed_s": 52.481, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 52.481, "event": "speech_end"}
+{"elapsed_s": 56.743, "event": "asr_final", "text": "Yavaş yavaş anlıyorum ben, ülkete şimdiler şimdiler şimdiler şimdiler şimdiler sen. Tamam tamam tamam tamam, sıkardık ulan bu kadar. Merhaba, arada merhaba dedim geldi.", "no_speech_prob": 0.09504496306180954, "avg_logprob": -0.5779567218962169}
+{"elapsed_s": 56.743, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 56.744, "event": "llm_start"}
+{"elapsed_s": 56.795, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 56.795, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 56.795, "event": "state_change", "frm": "THINKING", "to": "LISTEN"}
+{"elapsed_s": 56.813, "event": "interrupt", "cutoff_ms": 16.9608999999582}
+{"elapsed_s": 59.191, "event": "turn_end", "interrupted": false, "played": 0}
+{"elapsed_s": 62.573, "event": "session_end", "turns": 9, "interrupts": 9}

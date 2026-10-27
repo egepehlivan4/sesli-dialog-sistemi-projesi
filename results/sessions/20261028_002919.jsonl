@@ -1,0 +1,101 @@
+{"elapsed_s": 7.617, "event": "session_start", "strategy": "vad_only"}
+{"elapsed_s": 8.873, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 9.552, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 9.552, "event": "speech_end"}
+{"elapsed_s": 11.449, "event": "asr_final", "text": "Merhaba", "no_speech_prob": 0.09403468668460846, "avg_logprob": -0.8043285369873047}
+{"elapsed_s": 11.449, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 11.45, "event": "llm_start"}
+{"elapsed_s": 11.909, "event": "llm_sentence", "text": "Merhaba, size nasıl yardımcı olabilirim?"}
+{"elapsed_s": 14.06, "event": "mic_overflow", "new": 1, "total": 1}
+{"elapsed_s": 14.06, "event": "mic_overflow", "new": 1, "total": 2}
+{"elapsed_s": 14.178, "event": "response_latency", "ms": 4624.800900000082}
+{"elapsed_s": 14.178, "event": "state_change", "frm": "THINKING", "to": "SPEAK"}
+{"elapsed_s": 14.178, "event": "tts_start", "text": "Merhaba, size nasıl yardımcı olabilirim?"}
+{"elapsed_s": 16.813, "event": "tts_end", "text": "Merhaba, size nasıl yardımcı olabilirim?"}
+{"elapsed_s": 16.813, "event": "turn_end", "interrupted": false, "played": 1}
+{"elapsed_s": 16.813, "event": "state_change", "frm": "SPEAK", "to": "LISTEN"}
+{"elapsed_s": 19.181, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 20.382, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 20.382, "event": "speech_end"}
+{"elapsed_s": 22.442, "event": "asr_final", "text": "Bugün hava nasıl?", "no_speech_prob": 0.09908656775951385, "avg_logprob": -0.44248582422733307}
+{"elapsed_s": 22.442, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 22.443, "event": "llm_start"}
+{"elapsed_s": 25.109, "event": "llm_sentence", "text": "Üzgünüm, hava durumu bilgisi benim için mevcut değil."}
+{"elapsed_s": 25.251, "event": "response_latency", "ms": 4867.534599999999}
+{"elapsed_s": 25.251, "event": "state_change", "frm": "THINKING", "to": "SPEAK"}
+{"elapsed_s": 25.251, "event": "tts_start", "text": "Üzgünüm, hava durumu bilgisi benim için mevcut değil."}
+{"elapsed_s": 28.578, "event": "tts_end", "text": "Üzgünüm, hava durumu bilgisi benim için mevcut değil."}
+{"elapsed_s": 28.579, "event": "llm_sentence", "text": "Randevu almakla ilgili yardımcı olabilirim."}
+{"elapsed_s": 28.695, "event": "tts_start", "text": "Randevu almakla ilgili yardımcı olabilirim."}
+{"elapsed_s": 31.457, "event": "tts_end", "text": "Randevu almakla ilgili yardımcı olabilirim."}
+{"elapsed_s": 31.457, "event": "turn_end", "interrupted": false, "played": 2}
+{"elapsed_s": 31.457, "event": "state_change", "frm": "SPEAK", "to": "LISTEN"}
+{"elapsed_s": 32.662, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 34.501, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 34.501, "event": "speech_end"}
+{"elapsed_s": 36.679, "event": "asr_final", "text": "Yarın saat bu seferinde var.", "no_speech_prob": 0.0816086009144783, "avg_logprob": -0.6157151659329733}
+{"elapsed_s": 36.679, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 36.679, "event": "llm_start"}
+{"elapsed_s": 37.862, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 37.862, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 37.862, "event": "state_change", "frm": "THINKING", "to": "LISTEN"}
+{"elapsed_s": 37.889, "event": "interrupt", "cutoff_ms": 27.494700000033845}
+{"elapsed_s": 38.701, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 38.701, "event": "speech_end"}
+{"elapsed_s": 39.075, "event": "turn_end", "interrupted": false, "played": 0}
+{"elapsed_s": 40.804, "event": "asr_final", "text": "Değil mi ağabey?", "no_speech_prob": 0.4173165559768677, "avg_logprob": -0.9792720187794078}
+{"elapsed_s": 40.804, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 40.805, "event": "llm_start"}
+{"elapsed_s": 42.061, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 42.061, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 42.062, "event": "state_change", "frm": "THINKING", "to": "LISTEN"}
+{"elapsed_s": 42.093, "event": "interrupt", "cutoff_ms": 29.487799999969866}
+{"elapsed_s": 42.98, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 42.981, "event": "speech_end"}
+{"elapsed_s": 43.112, "event": "turn_end", "interrupted": false, "played": 0}
+{"elapsed_s": 48.75, "event": "asr_final", "text": "Yeni bir şey yap.", "no_speech_prob": 0.16808244585990906, "avg_logprob": -1.0218765470716689}
+{"elapsed_s": 48.75, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 48.751, "event": "llm_start"}
+{"elapsed_s": 48.841, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 48.841, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 48.841, "event": "state_change", "frm": "THINKING", "to": "LISTEN"}
+{"elapsed_s": 48.856, "event": "interrupt", "cutoff_ms": 13.590600000043196}
+{"elapsed_s": 49.264, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 49.264, "event": "speech_end"}
+{"elapsed_s": 51.103, "event": "turn_end", "interrupted": false, "played": 0}
+{"elapsed_s": 51.348, "event": "asr_final", "text": "Merhaba", "no_speech_prob": 0.06293661147356033, "avg_logprob": -0.630181884765625}
+{"elapsed_s": 51.349, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 51.349, "event": "llm_start"}
+{"elapsed_s": 51.377, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 51.378, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 51.378, "event": "state_change", "frm": "THINKING", "to": "LISTEN"}
+{"elapsed_s": 51.415, "event": "interrupt", "cutoff_ms": 36.89840000015465}
+{"elapsed_s": 51.663, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 51.663, "event": "speech_end"}
+{"elapsed_s": 53.659, "event": "turn_end", "interrupted": false, "played": 0}
+{"elapsed_s": 53.791, "event": "asr_final", "text": "Merhaba.", "no_speech_prob": 0.07500480115413666, "avg_logprob": -0.5186369518438975}
+{"elapsed_s": 53.791, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 53.791, "event": "llm_start"}
+{"elapsed_s": 53.813, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 53.813, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 53.813, "event": "state_change", "frm": "THINKING", "to": "LISTEN"}
+{"elapsed_s": 53.815, "event": "interrupt", "cutoff_ms": 1.7869000000700908}
+{"elapsed_s": 53.83, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 53.83, "event": "speech_end"}
+{"elapsed_s": 55.78, "event": "asr_final", "text": "Hımm.", "no_speech_prob": 0.26114246249198914, "avg_logprob": -0.8325858286448887}
+{"elapsed_s": 56.079, "event": "turn_end", "interrupted": false, "played": 0}
+{"elapsed_s": 56.079, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 56.08, "event": "llm_start"}
+{"elapsed_s": 56.116, "event": "vad_event", "kind": "SPEECH_START"}
+{"elapsed_s": 56.116, "event": "barge_in_decision", "hook": "on_user_speech_start", "decision": "INTERRUPT"}
+{"elapsed_s": 56.116, "event": "state_change", "frm": "THINKING", "to": "LISTEN"}
+{"elapsed_s": 56.13, "event": "interrupt", "cutoff_ms": 12.808200000108627}
+{"elapsed_s": 56.701, "event": "vad_event", "kind": "SPEECH_END"}
+{"elapsed_s": 56.701, "event": "speech_end"}
+{"elapsed_s": 58.396, "event": "turn_end", "interrupted": false, "played": 0}
+{"elapsed_s": 58.977, "event": "asr_final", "text": "Öyle mi?", "no_speech_prob": 0.11694303154945374, "avg_logprob": -0.720953643321991}
+{"elapsed_s": 58.98, "event": "state_change", "frm": "LISTEN", "to": "THINKING"}
+{"elapsed_s": 58.981, "event": "llm_start"}
+{"elapsed_s": 61.586, "event": "turn_end", "interrupted": false, "played": 0}
+{"elapsed_s": 61.586, "event": "state_change", "frm": "THINKING", "to": "LISTEN"}
+{"elapsed_s": 61.73, "event": "session_end", "turns": 9, "interrupts": 6}
