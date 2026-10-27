@@ -16,8 +16,6 @@ from dataclasses import dataclass
 from pathlib import Path
 
 # .env dosyası varsa ve python-dotenv kuruluysa otomatik yükle.
-# Bu YENİ bir zorunlu bağımlılık eklemez (requirements.txt'de yok);
-# sadece kurulu ise kullanıcı deneyimini kolaylaştırır.
 try:
     from dotenv import load_dotenv
 
@@ -31,9 +29,16 @@ def _get_str(name: str, default: str) -> str:
     return value if value else default
 
 
-def _get_opt_str(name: str) -> str | None:
+def _get_opt_device(name: str) -> int | str | None:
+    """Ses aygıtını okur: sayısal ID ise int, isim ise str, boşsa None döner."""
     value = os.environ.get(name)
-    return value if value else None
+    if not value or not value.strip():
+        return None
+    val = value.strip()
+    try:
+        return int(val)
+    except ValueError:
+        return val
 
 
 def _get_int(name: str, default: int) -> int:
@@ -79,8 +84,8 @@ class Settings:
     sample_rate: int
     channels: int
     audio_dtype: str
-    input_device: str | None
-    output_device: str | None
+    input_device: int | str | None
+    output_device: int | str | None
     audio_chunk_ms: int
 
     # --- VAD (silero-vad) ---
@@ -126,8 +131,8 @@ def _load() -> Settings:
         sample_rate=_get_int("SAMPLE_RATE", 16000),
         channels=_get_int("CHANNELS", 1),
         audio_dtype=_get_str("AUDIO_DTYPE", "float32"),
-        input_device=_get_opt_str("INPUT_DEVICE"),
-        output_device=_get_opt_str("OUTPUT_DEVICE"),
+        input_device=_get_opt_device("INPUT_DEVICE"),
+        output_device=_get_opt_device("OUTPUT_DEVICE"),
         audio_chunk_ms=_get_int("AUDIO_CHUNK_MS", 20),
         # VAD
         vad_threshold=_get_float("VAD_THRESHOLD", 0.5),
@@ -168,3 +173,4 @@ if __name__ == "__main__":
     # Tek başına çalıştırıldığında çözümlenen ayarları özetle.
     for field_name, value in SETTINGS.__dict__.items():
         print(f"{field_name} = {value!r}")
+        

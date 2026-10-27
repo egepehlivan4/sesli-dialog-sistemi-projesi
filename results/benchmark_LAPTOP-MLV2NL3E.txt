@@ -1,0 +1,80 @@
+============================================================
+BENCHMARK
+============================================================
+İşletim sistemi : Windows 11
+Mimari          : AMD64
+İşlemci         : AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD
+Python          : 3.13.3
+
+=== TTS ===
+[kısa] "Merhaba, nasılsın?"
+  Ses süresi          : 1.31 s
+  Ortalama RTF (5x) : 0.041
+[orta] "Yarın öğleden sonra saat üçte randevunuz var, lütfen zamanında gelin."
+  Ses süresi          : 4.70 s
+  Ortalama RTF (5x) : 0.038
+[uzun] "Bu cümle bilerek oldukça uzun yazıldı, çünkü hem metin-ses dönüştürücünün hem de konuşma tanımanın daha gerçekçi bir konuşma süresi üzerinden, kesme testine de yetecek kadar uzun bir ses ile ölçülmesini istiyoruz."
+  Ses süresi          : 13.48 s
+  Ortalama RTF (5x) : 0.039
+
+=== ASR ===
+[kısa]
+  Orijinal metin      : Merhaba, nasılsın?
+  ASR çıktısı         : Marhaba nasılsın?
+  Ortalama RTF (5x) : 1.402
+  WER                 : 50.0%
+[orta]
+  Orijinal metin      : Yarın öğleden sonra saat üçte randevunuz var, lütfen zamanında gelin.
+  ASR çıktısı         : Yarın öğleden sonra saat üçte randevunuz var, lütfen zamanında gelin.
+  Ortalama RTF (5x) : 0.461
+  WER                 : 0.0%
+[uzun]
+  Orijinal metin      : Bu cümle bilerek oldukça uzun yazıldı, çünkü hem metin-ses dönüştürücünün hem de konuşma tanımanın daha gerçekçi bir konuşma süresi üzerinden, kesme testine de yetecek kadar uzun bir ses ile ölçülmesini istiyoruz.
+  ASR çıktısı         : Bu cümle bilerek oldukça uzun yazıldı çünkü Hemmet'in ses dönüştürücünün hem de konuşma tanımanın daha gerçekçi bir konuşma süresi üzerinden kesme testine de yetecek kadar uzun bir sesle ölçülmesini istiyoruz.
+  Ortalama RTF (5x) : 0.269
+  WER                 : 12.9%
+
+=== LLM ===
+Model: gemma3:4b
+Isınma isteği gönderiliyor...
+Isınma tamamlandı (9616 ms)
+
+Soru: Yarın saat kaçta açıksınız?
+  Cevap: Yarın hafta içi 09:00-18:00 saatleri arasında randevu alabilirsiniz.
+Soru: Randevumu iptal etmek istiyorum.
+  Cevap: Tabii, iptal için ad soyadınızı ve randevu iptalini istediğiniz günü ve saati belirtir misiniz?
+Soru: Bu hafta sonu hava nasıl olacak?
+  Cevap: Maalesef, hava durumu bilgisi bu klinikle ilgili değil, randevu almakla ilgili yardımcı olabilirim.
+Soru: Bana kısa bir tavsiye ver.
+  Cevap: Elbette, gülümsemek her zaman iyi gelir! 😊
+Soru: Türkiye'nin başkenti neresi?
+  Cevap: Maalesef, randevu almakla ilgili bilgilere odaklanıyorum.
+
+Ortalama TTFT (5 soru)              : 1964 ms
+Ortalama ilk cümle süresi (5 soru) : 2279 ms
+Ortalama token/saniye                        : 60.6
+
+=== SpeakerOut (kesme testi) ===
+Ses süresi        : 13.48 s, kesme noktası: 300 ms
+Ortalama kesme gecikmesi (10x) : 18.22 ms
+En kötü kesme gecikmesi               : 18.90 ms
+
+==========================================================
+ÖZET
+==========================================================
+Modül             Metrik                    Değer         
+----------------------------------------------------------
+TTS (kısa)        ort. RTF                  0.041         
+TTS (orta)        ort. RTF                  0.038         
+TTS (uzun)        ort. RTF                  0.039         
+ASR (kısa)        ort. RTF                  1.402         
+ASR (kısa)        WER                       50.0          %
+ASR (orta)        ort. RTF                  0.461         
+ASR (orta)        WER                       0.0           %
+ASR (uzun)        ort. RTF                  0.269         
+ASR (uzun)        WER                       12.9          %
+LLM               ort. TTFT                 1964           ms
+LLM               ort. ilk cümle süresi     2279           ms
+LLM               ort. token/s              60.6          
+SpeakerOut        ort. kesme gecikmesi      18.22          ms
+SpeakerOut        en kötü kesme gecikmesi   18.90          ms
