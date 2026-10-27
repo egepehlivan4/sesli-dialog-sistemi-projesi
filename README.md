@@ -1,8 +1,7 @@
 # Türkçe Full-Duplex Sesli Diyalog Sistemi
 
 TÜBİTAK 2209-A başvurusu için fizibilite çalışması. Amaç satışa hazır bir
-ürün değil, **ölçülebilir bir deney**: tamamen yerel (Ollama + faster-whisper
-+ piper-tts) bir Türkçe sesli diyalog hattı kurup, kullanıcı asistanın
+ürün değil, **ölçülebilir bir deney**: tamamen yerel (Ollama + faster-whisper + piper-tts) bir Türkçe sesli diyalog hattı kurup, kullanıcı asistanın
 sözünü kestiğinde (barge-in) farklı kesinti stratejilerinin davranışını
 ve gecikmesini ölçmek. Sistem; mikrofon → VAD → iki kademeli ASR →
 LLM → TTS → hoparlör hattını tek bir durum makinesiyle (`Controller`)
